@@ -1,0 +1,10 @@
+﻿{
+  "Name": "Staryu Valley",
+  "Author": "theCambunctious",
+  "Version": "1.0.0",
+  "Description": "Pokemon",
+  "UniqueID": "theCambunctious.StaryuValley",
+  "EntryDll": "StaryuValley.dll",
+  "MinimumApiVersion": "3.0.0",
+  "UpdateKeys": []
+}
