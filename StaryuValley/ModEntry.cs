@@ -31,16 +31,22 @@ namespace StaryuValley
         /// <param name="e">The event data.</param>
         private void OnAssetRequested(object sender, AssetRequestedEventArgs e)
         {
-            if (e.Name.IsEquivalentTo("Animals/horse"))                                                     // This is referencing the sprite that we want to replace
-                                                                                                            // If you go to the Stardew local files folder and go to "Content"
-                                                                                                            // there's a bunch of sub folders. The first part, in this case 
-                                                                                                            // "Animals", is that folder (also could be Portraits, etc)
-                                                                                                            // The last part (in this case "horse"), is the specific .xnb file
-                                                                                                            // we're trying to replace. Since I'm trying to replace the horse sprite,
-                                                                                                            // that's what I put here (case sensitive)
+            /* 
+             * This first part in the if-statement is referencing the sprite that we want to replace.
+             * If you go to the SDV local files folder and go to "Content", there's a bunch of sub folders. 
+             * The first part, in this case "Animals", is that folder (also could be Portraits, Buildings, etc)
+             * The second part (in this case "horse"), is the specific .xnb file that we're trying to replace.
+             * Since I'm trying to replace the horse sprite, that's what I put here (case sensitive. idk why horse is lowercase)
+             * If I was trying to replace Abigail it'd be "Portraits/Abigail"
+             */
+            if (e.Name.IsEquivalentTo("Animals/horse"))                                                     
             {
-                e.LoadFromModFile<Texture2D>("assets/ponyta_unfinished.png", AssetLoadPriority.Medium);     // the file here is the location of the .png file we're trying to put
-                                                                                                            // in from our mod folder. This sprite is located in the "assets" folder.
+                e.LoadFromModFile<Texture2D>("assets/Content/Animals/ponyta_unfinished.png", AssetLoadPriority.Medium);     
+                /* 
+                 * The file here is the location of the .png file we're trying to put in from our mod folder. 
+                 * This ponyta sprite is located in the "assets/Content/Animals" folder of our repo, and it's
+                 * just the full .png filename that goes here.
+                 */
             }
         }
     }
