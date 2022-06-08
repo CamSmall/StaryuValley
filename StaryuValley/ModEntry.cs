@@ -41,7 +41,7 @@ namespace StaryuValley
              */
             if (e.Name.IsEquivalentTo("Animals/horse"))                                                     
             {
-                e.LoadFromModFile<Texture2D>("assets/Content/Animals/ponyta_unfinished.png", AssetLoadPriority.Medium);     
+                e.LoadFromModFile<Texture2D>("assets/Content/Animals/ponyta.png", AssetLoadPriority.Medium);     
                 /* 
                  * The file here is the location of the .png file we're trying to put in from our mod folder. 
                  * This ponyta sprite is located in the "assets/Content/Animals" folder of our repo, and it's
