@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewModdingAPI.Utilities;
@@ -17,24 +18,30 @@ namespace StaryuValley
         /// <param name="helper">Provides simplified APIs for writing mods.</param>
         public override void Entry(IModHelper helper)
         {
-            helper.Events.Input.ButtonPressed += this.OnButtonPressed;
+            helper.Events.Content.AssetRequested += this.OnAssetRequested;
         }
 
 
         /*********
         ** Private methods
         *********/
-        /// <summary>Raised after the player presses a button on the keyboard, controller, or mouse.</summary>
+
+        /// <inheritdoc cref="IContentEvents.AssetRequested"/>
         /// <param name="sender">The event sender.</param>
         /// <param name="e">The event data.</param>
-        private void OnButtonPressed(object sender, ButtonPressedEventArgs e)
+        private void OnAssetRequested(object sender, AssetRequestedEventArgs e)
         {
-            // ignore if player hasn't loaded a save yet
-            if (!Context.IsWorldReady)
-                return;
-
-            // print button presses to the console window
-            this.Monitor.Log($"{Game1.player.Name} pressed {e.Button}.", LogLevel.Debug);
+            if (e.Name.IsEquivalentTo("Animals/horse"))                                                     // This is referencing the sprite that we want to replace
+                                                                                                            // If you go to the Stardew local files folder and go to "Content"
+                                                                                                            // there's a bunch of sub folders. The first part, in this case 
+                                                                                                            // "Animals", is that folder (also could be Portraits, etc)
+                                                                                                            // The last part (in this case "horse"), is the specific .xnb file
+                                                                                                            // we're trying to replace. Since I'm trying to replace the horse sprite,
+                                                                                                            // that's what I put here (case sensitive)
+            {
+                e.LoadFromModFile<Texture2D>("assets/ponyta_unfinished.png", AssetLoadPriority.Medium);     // the file here is the location of the .png file we're trying to put
+                                                                                                            // in from our mod folder. This sprite is located in the "assets" folder.
+            }
         }
     }
 }
