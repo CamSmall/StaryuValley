@@ -39,6 +39,8 @@ namespace StaryuValley
              * Since I'm trying to replace the horse sprite, that's what I put here (case sensitive. idk why horse is lowercase)
              * If I was trying to replace Abigail it'd be "Portraits/Abigail"
              */
+
+            // Animals //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             if (e.Name.IsEquivalentTo("Animals/horse"))                                                     
             {
                 e.LoadFromModFile<Texture2D>("assets/Content/Animals/ponyta.png", AssetLoadPriority.Medium);     
@@ -48,13 +50,25 @@ namespace StaryuValley
                  * just the full .png filename that goes here.
                  */
             }
+
+            // Loose Sprites ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             if (e.Name.IsEquivalentTo("LooseSprites/logo"))
             {
-                e.LoadFromModFile<Texture2D>("assets/Content/LooseSprites/logoStaryuValley.png", AssetLoadPriority.Medium);
+                e.LoadFromModFile<Texture2D>("assets/Content/LooseSprites/logo.png", AssetLoadPriority.Medium);
             }
+            if (e.Name.IsEquivalentTo("LooseSprites/parrots"))
+            {
+                e.LoadFromModFile<Texture2D>("assets/Content/LooseSprites/parrots.png", AssetLoadPriority.Medium);
+            }
+
+            // Minigames ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             if (e.Name.IsEquivalentTo("Minigames/TitleButtons"))
             {
-                e.LoadFromModFile<Texture2D>("assets/Content/Minigames/newTitleButtons.png", AssetLoadPriority.Medium);
+                e.LoadFromModFile<Texture2D>("assets/Content/Minigames/TitleButtons.png", AssetLoadPriority.Medium);
+            }
+            if (e.Name.IsEquivalentTo("Minigames/Intro"))
+            {
+                e.LoadFromModFile<Texture2D>("assets/Content/Minigames/Intro.png", AssetLoadPriority.Medium);
             }
         }
     }
