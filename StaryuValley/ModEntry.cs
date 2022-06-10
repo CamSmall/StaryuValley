@@ -48,6 +48,14 @@ namespace StaryuValley
                  * just the full .png filename that goes here.
                  */
             }
+            if (e.Name.IsEquivalentTo("LooseSprites/logo"))
+            {
+                e.LoadFromModFile<Texture2D>("assets/Content/LooseSprites/logoStaryuValley.png", AssetLoadPriority.Medium);
+            }
+            if (e.Name.IsEquivalentTo("Minigames/TitleButtons"))
+            {
+                e.LoadFromModFile<Texture2D>("assets/Content/Minigames/newTitleButtons.png", AssetLoadPriority.Medium);
+            }
         }
     }
 }
