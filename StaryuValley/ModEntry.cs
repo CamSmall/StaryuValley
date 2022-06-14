@@ -56,10 +56,10 @@ namespace StaryuValley
             {
                 e.LoadFromModFile<Texture2D>("assets/Content/LooseSprites/logo.png", AssetLoadPriority.Medium);
             }
-            //if (e.Name.IsEquivalentTo("LooseSprites/Cursors"))
-            //{
-            //    e.LoadFromModFile<Texture2D>("assets/Content/LooseSprites/Cursors.png", AssetLoadPriority.Medium);
-            //}
+            if (e.Name.IsEquivalentTo("LooseSprites/Cursors"))
+            {
+                e.LoadFromModFile<Texture2D>("assets/Content/LooseSprites/Cursors.png", AssetLoadPriority.Medium);
+            }
             if (e.Name.IsEquivalentTo("LooseSprites/parrots"))
             {
                 e.LoadFromModFile<Texture2D>("assets/Content/LooseSprites/parrots.png", AssetLoadPriority.Medium);
